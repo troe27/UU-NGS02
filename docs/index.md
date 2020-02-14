@@ -12,7 +12,7 @@ Today we will work with sequencing data derived from [_Mycobacterium tuberculosi
 
 We will work with several "patient derived samples": strains that have been either sampled from patients where the disease responded well to antibiotic treatment, or from patients with a more problematic disease progression, where the infection did not respond to first-line antibiotics.
 
-**Task1:**  
+### **Task1:**  
 SSH into Rackham and request a interactive session, like you did yesterday.
 The reservation code for today is ```RESERVATION_CODE ```
 <details><summary>HELP</summary>
@@ -43,7 +43,7 @@ for example, sample **1337**, which has a **c**omplicated disease progression, w
 C_1337_R1.fastq
 C_1337_R2.fastq
 ```
-**Task2:**
+### **Task2:**  
 Pick one simple (S) and one complicated (C) disease progression sample and [copy]() them to your home directory.
 
 Once you're done, please ponder the following questions. We will discuss them together in a few minutes
@@ -65,17 +65,20 @@ Once you're done, please ponder the following questions. We will discuss them to
  <br>
 
 
+### **Task3:**  
+
+Generate GVCF files from your samples, using the Software and steps from Day 1&2
+
+**Alternatively:**  
+ [Generate GVCF files from many samples using a bashscript with for-loops, variables and string manipulation](./bash_scripting_day1.md)
+
+**NB:**
+ - you will have to omit the BSQR step.
+ - you need to run HaplotypeCaller with the ``-ploidy 1`` option.
+
+- **optional**: have a look at the [HaplotypeCaller API](https://gatk.broadinstitute.org/hc/en-us/articles/360036712151-HaplotypeCaller) ([API](https://en.wikipedia.org/wiki/Application_programming_interface) = **A**pplication **P**rogramming **I**nterface).
+    Here you can find out what options are available and what they do. You dont need to know or understand any of them for now, but keep in mind that there are a lot of gears/choices hidden behind the default options.
 
 
 
-
-
-
-
-
-
-
-
-
-
-make them look at the [HaplotypeCaller API](https://gatk.broadinstitute.org/hc/en-us/articles/360036712151-HaplotypeCaller). they dont need to read it, just realise there's a lot under the hood.
+### **Task4:**  
