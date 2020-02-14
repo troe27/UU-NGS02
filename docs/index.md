@@ -16,6 +16,7 @@ The reservation code for today is ```RESERVATION_CODE ```
 
 <details><summary>HELP</summary>
 <p>
+
 ```bash
 salloc -A g2019015 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2019015_3 \
 -M snowy &
