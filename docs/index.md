@@ -1,12 +1,26 @@
 
 # work in progress 2020-02-17
 
+### Table of contents
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
+
+- [Overview](#overview)
+- [objectives](#objectives)
+- [background & motivation](#background-motivation)
+- [Task1:](#task1)
+- [Task2:](#task2)
+- [Task3:](#task3)
+- [Task4:](#task4)
+- [Wrap-up](#wrap-up)
+
+<!-- /TOC -->
+
+
 ### Overview
 ![visual overview](figures/UU-NGS02.svg)
 ### objectives
-## toc
 
-#### background & motivation
+### background & motivation
 Today we will work with sequencing data derived from [_Mycobacterium tuberculosis_](https://en.wikipedia.org/wiki/Mycobacterium_tuberculosis).
  _Mycobacterium tuberculosis_ is a pathogenic bacteria, and the causative agent of [tuberculosis](https://en.wikipedia.org/wiki/Tuberculosis), a bacterial disease that kills about [1.2 million people annually](https://www.who.int/tb/publications/global_report/en/), making it the leading cause of death among infectious diseases.
  Since the treatment of tuberculosis requires sustained use of antibiotics, the rise of  multiple drug-resistant tuberculosis (MDR-TB) and extensively drug-resistant tuberculosis (XDR-TB) provides a serious concern for world health.

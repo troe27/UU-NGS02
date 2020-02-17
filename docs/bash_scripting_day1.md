@@ -1,7 +1,20 @@
+# Toolbox for wrapping the variant calling in a bash-script
+
+#### Table of contents
+<!-- /TOC --><!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
+
+- [Table of contents](#table-of-contents)
+- [For-loops](#for-loops)
+- [Command-line variables in bash](#command-line-variables-in-bash)
+- [String manipulation](#string-manipulation)
+
+<!-- /TOC -->
 
 
+Some basic concepts & examples that may help you with this.  
+**as a general tip:** before you run any command in a for loop. it is usually helpful to do a "dry-run" using ```echo```. in front of the command you want to run, in order to see if you got the variables and file-names right.
 
-### Basic for-loop:
+### For-loops
 
 
 ```bash
@@ -11,8 +24,10 @@ do                     # beginning of loop
                        # in the for-loop, i can be accessed using the ${i} variable.
 done                   # end of loop
 ```
+<br>
 
-### command-line variables in bash:
+
+### Command-line variables in bash
 
 numerical bash variables correspond to positional command line arguments:
 
@@ -54,8 +69,10 @@ will not result in "apple" being printed, since the second positional argument (
 [out]: mouse
 [out]: cheddar
 ```
+<br>  
 
-### String manipulation:
+
+### String manipulation
 
 ```bash
  [in]: test_variable="path/to/SampleA_R1.fastq" # define variable
@@ -70,7 +87,7 @@ the most important string manipulation is probably **substring removal**:<br>
 [out]: path/to/SampleA_R1
  [in]: echo ${test_variable%.fastq}.sam  #you can add new strings if you do so outside of the curly brackets           
 [out]: path/to/SampleA_R1.sam
-                  
+
 ```
 
 ```#substring``` removes the **shortest matching substring** from the **front** of the string.
