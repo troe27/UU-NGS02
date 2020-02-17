@@ -1,7 +1,8 @@
 
-# work in progress 2020-02-14
+# work in progress 2020-02-17
 
 ### Overview
+![visual overview](figures/UU-NGS02.svg)
 ### objectives
 ## toc
 
