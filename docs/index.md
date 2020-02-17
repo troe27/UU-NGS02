@@ -16,7 +16,7 @@ We will work with several "patient derived samples": strains that have been eith
 ### **Task1:**  
 SSH into Rackham and request a interactive session, like you did yesterday.
 The reservation code for today is ```RESERVATION_CODE ```
-<details><summary>HELP</summary>
+<details><summary>tips</summary>
 <p>
 
 ```bash
@@ -57,7 +57,7 @@ Once you're done, please ponder the following questions. We will discuss them to
 
  [ the fastq format](https://en.wikipedia.org/wiki/FASTQ_format)  
  [grep](http://man7.org/linux/man-pages/man1/grep.1.html)  
-
+ [wc -l](https://ss64.com/bash/wc.html)
  </p>
 
  </details>
@@ -71,7 +71,7 @@ Once you're done, please ponder the following questions. We will discuss them to
 Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
 **Alternatively:**  
- [Generate GVCF files from many samples using a bashscript with for-loops, variables and string manipulation](./bash_scripting_day1.md)
+ Generate GVCF files from many samples using a [bash-script with for-loops, variables and string manipulation](./bash_scripting_day1.md)
 
 **NB:**
  - you will have to omit the BSQR step.
@@ -83,3 +83,15 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
 
 ### **Task4:**  
+
+copy the generated GVCF files into the folder folder below!  
+We will run joint variant-calling on it, to generate the VCF file that we will use tomorrow.
+```
+/path/to/project/subproject/gvcf
+```
+
+### **Wrap-up**
+
+- #### What are the main take-away messages?
+- #### which of these are relevant to the exam?
+- #### How does this relate to the real world? (and our research?)
