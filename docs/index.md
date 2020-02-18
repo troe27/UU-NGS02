@@ -4,37 +4,56 @@
 ### Table of contents
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
+- [Table of contents](#table-of-contents)
 - [Overview](#overview)
-- [Objectives](#objectives)
-- [Background and motivation](#background-and-motivation)
-- [Task1:](#task1)
-- [Task2:](#task2)
-- [Task3:](#task3)
-- [Task4:](#task4)
-- [Wrap-up](#wrap-up)
+- [Background](#background)
+- [Day1](#day1)
+  - [Objectives](#objectives)
+  - [Data](#data-day-1)
+  - [Task 1:](#task-1)
+  - [Task 2:](#task-2)
+  - [Task 3:](#task-3)
+  - [Task 4:](#task-4)
+  - [Wrap up day 1](#wrap-up-day-1)
+- [Day 2](#day-2)
+  - [Objectives](#objectives)
+  - [Data](#data-day-2)
+  - [Task 1](#task-1)
+  - [Task2](#task2)
+  - [Task3](#task3)
+  - [Task4](#task4)
+  - [Discussion and Wrap-up.](#discussion-and-wrap-up)
 
 <!-- /TOC -->
 
-
 ### Overview
 ![visual overview](figures/UU-NGS02.svg)
-### Objectives
 
-### Background & motivation
-Today we will work with sequencing data derived from [_Mycobacterium tuberculosis_](https://en.wikipedia.org/wiki/Mycobacterium_tuberculosis).
+### Background
+Today and tomorrow we will work with sequencing data derived from [_Mycobacterium tuberculosis_](https://en.wikipedia.org/wiki/Mycobacterium_tuberculosis).
  _Mycobacterium tuberculosis_ is a pathogenic bacteria, and the causative agent of [tuberculosis](https://en.wikipedia.org/wiki/Tuberculosis), a bacterial disease that kills about [1.2 million people annually](https://www.who.int/tb/publications/global_report/en/), making it the leading cause of death among infectious diseases.
  Since the treatment of tuberculosis requires sustained use of antibiotics, the rise of  multiple drug-resistant tuberculosis (MDR-TB) and extensively drug-resistant tuberculosis (XDR-TB) provides a serious concern for world health.
 
 We will work with several "patient derived samples": strains that have been either sampled from patients where the disease responded well to antibiotic treatment, or from patients with a more problematic disease progression, where the infection did not respond to first-line antibiotics.
 
-### Task1:  
+## Day1  
+
+### Objectives
+ - practise/re-use what you've learned yesterday on a different dataset. If anything was unclear yesterday, now is the time to catch up on that.
+ - get a vague insight into how different data requires different treatment.
+ - transition from copy-pasting _"magic incantations"_ to _"using tools that i can adapt to my data"_.
+ - gain increased familiarity with one of the basic dataformats and handling them, using simple command line tools.
+ - learn how this practical connects to real research.
+
+
+### Task 1:  
 SSH into Rackham and request a interactive session, like you did yesterday.
 The reservation code for today is ```RESERVATION_CODE ```
 <details><summary>tips</summary>
 <p>
 
 ```bash
-salloc -A g2019015 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2019015_3 \
+salloc -A <project> -t 04:00:00 -p core -n 5 --no-shell --reservation=<RESERVATION_CODE> \
 -M snowy &
 ## find your node:
 squeue -u <username> -M snowy
@@ -48,7 +67,7 @@ ssh -Y <nodename>
 <br>
 <br>
 
-
+## data day 1
 We have prepared a directory with **.fastq** files from **100** samples.
 each sample consists of two files, containing the forward and reverse reads.
 they follow the naming scheme   ```TYPE_ID_READTYPE.FILEENDING```.
@@ -58,10 +77,10 @@ for example, sample **1337**, which has a **c**omplicated disease progression, w
 C_1337_R1.fastq
 C_1337_R2.fastq
 ```
-### Task2:
-Pick one simple (S) and one complicated (C) disease progression sample and [copy]() them to your home directory.
+### Task 2:
+Pick one simple (S) and one complicated (C) disease progression sample and [copy](https://linux.die.net/man/1/cp) them to your home directory.
 
-Once you're done, please ponder the following questions. We will discuss them together in a few minutes
+**Questions:**
 
  - _How does this data differ from the one that you worked on before?_
  -  _Do you think you will be able to use the GATK BSQR tool on this dataset?_
@@ -80,7 +99,7 @@ Once you're done, please ponder the following questions. We will discuss them to
  <br>
 
 
-### Task3:
+### Task 3:
 
 Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
@@ -91,12 +110,12 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
  - you will have to omit the BSQR step.
  - you need to run HaplotypeCaller with the ``-ploidy 1`` option.
 
-- **optional**: have a look at the [HaplotypeCaller API](https://gatk.broadinstitute.org/hc/en-us/articles/360036712151-HaplotypeCaller) ([API](https://en.wikipedia.org/wiki/Application_programming_interface) = **A**pplication **P**rogramming **I**nterface).
+  - **optional**: have a look at the [HaplotypeCaller API](https://gatk.broadinstitute.org/hc/en-us/articles/360036712151-HaplotypeCaller) ([API](https://en.wikipedia.org/wiki/Application_programming_interface) = **A**pplication **P**rogramming **I**nterface).
     Here you can find out what options are available and what they do. You dont need to know or understand any of them for now, but keep in mind that there are a lot of gears/choices hidden behind the default options.
 
 
 
-### Task4:
+### Task 4:
 
 copy the generated GVCF files into the folder folder below!  
 We will run joint variant-calling on it, to generate the VCF file that we will use tomorrow.
@@ -104,8 +123,94 @@ We will run joint variant-calling on it, to generate the VCF file that we will u
 /path/to/project/subproject/gvcf
 ```
 
-### Wrap-up
+### Wrap up day 1
 
 - #### What are the main take-away messages?
 - #### which of these are relevant to the exam?
 - #### How does this relate to the real world? (and our research?)
+
+## Day 2
+
+### Objectives
+- familiarise yourself with the VCF file-format
+- Discuss the variant data by plotting and clustering the genotype matrix.
+- familiarise yourself with BCFtools/htslib for filtering, modifying and analysing Variant data.
+- investigate between-group allele-frequency-differences to identify candidate regions.  
+
+### Data-day-2
+Today we will work with the VCF file containing the samples that you processed yesterday.
+
+### Task 1
+- copy the VCF-file from the folder below into your working directory.
+```
+path/to/project/subproject/VCF.vcf
+```
+- in the same folder is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
+
+- inspect the file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
+  - If you're not sure what any of these do, make sure to read the [man page](https://en.wikipedia.org/wiki/Man_page) for these tools.
+  - You can also have a look at the [official specifications for vcf-fileformat 4.2](https://samtools.github.io/hts-specs/VCFv4.2.pdf).
+- *can you spot a general structure?*
+- *what do columns and rows represent?*
+- *can you tell how many samples there are?*
+  - <details><summary>tips</summary>
+
+      <p>
+        **dirty and fast** : grep the header-line containing the sample-names, count them.  <br>
+        **clean**: there's a BCFtools functionality that outputs a list of sample-names. e.g. ```bcftools query -l file.bcf | wc -l```
+
+      </p>
+   </details>
+
+
+
+### Task2
+Plot the variants as a heatmap and/or clustermap.
+we have made a small script that does this for you, called ```plot_variants.py```that you can find in the folder ```/path/to/script/``` and copy over to your directory. this file is a small python script that you can run just like any bash-script. it has a few options that you can see when looking for the help-message:
+you can look at the script in detail [here]()
+```bash
+ [in]: python plot_variants.py --help
+[out]: #TODO
+```
+**Questions:**
+ - _What do the X and Y axis represent?_
+ - _What do the colours mean?_
+ - _Can you identify duplicate samples?_
+ - _How many samples do you need to identify a causative region?_
+ - _Can you already spot something interesting?_
+
+
+### Task3
+For the Third task, we are going to split the VCF into multiple groups corresponding with their phenotype, using BCFtools.
+
+
+**Questions:**
+
+- _Why are we comparing specific sub-phenotypes, and not just simple/complicated disease progression ?_
+
+
+**tasks:**
+- Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples.sh```. Look at it using ```cat``` or  ```less``` to figure out what input it needs.  
+- split the vcf file into two files, using bcftools and the generated lists.
+
+### Task4
+for the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants.
+
+**Questions:**
+- _Do you know what is meant with allele-frequency?_
+- _Do you have an idea why we look at allele-frequency difference and not presence/absence of variants between groups ?_
+- _What does a high or low allele-frequency difference between two groups mean in this case?_
+- _What could it also mean?_
+
+**Tasks:**
+for both files, extract allele-frequencies using BCFtools.
+compute and plot the allele-frequency delta using the provided script ```delta_af.py```
+
+**Questions:**
+
+
+
+### Discussion and Wrap-up.
+
+- #### What are the main take-away messages?
+- #### which of these are relevant to the exam?
