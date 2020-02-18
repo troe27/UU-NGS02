@@ -53,7 +53,7 @@ The reservation code for today is ```RESERVATION_CODE ```
 <p>
 
 ```bash
-salloc -A <project> -t 04:00:00 -p core -n 5 --no-shell --reservation=<RESERVATION_CODE> \
+salloc -A <PROJECT> -t 04:00:00 -p core -n 5 --no-shell --reservation=<RESERVATION_CODE> \
 -M snowy &
 ## find your node:
 squeue -u <username> -M snowy
@@ -148,7 +148,7 @@ path/to/project/subproject/VCF.vcf
 - in the same folder is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
 - inspect the file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
-  - If you're not sure what any of these do, make sure to read the [man page](https://en.wikipedia.org/wiki/Man_page) for these tools.
+  - If you're not sure what any of these do, you can read the [man page](https://en.wikipedia.org/wiki/Man_page) for these tools or google them.
   - You can also have a look at the [official specifications for vcf-fileformat 4.2](https://samtools.github.io/hts-specs/VCFv4.2.pdf).
 - *can you spot a general structure?*
 - *what do columns and rows represent?*
