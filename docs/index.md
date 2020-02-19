@@ -122,6 +122,7 @@ We will run joint variant-calling on it, to generate the VCF file that we will u
 ```
 /path/to/project/subproject/gvcf
 ```
+add an identifier to the filename, so you will be able to recognise it tomorrow (optional).
 
 ### Wrap up day 1
 
