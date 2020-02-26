@@ -1,5 +1,5 @@
 
-# work in progress 2020-02-17
+# work in progress 2020-02-26
 
 ### Table of contents
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
@@ -41,8 +41,8 @@ We will work with several "patient derived samples": strains that have been eith
 ### Objectives
  - practise/re-use what you've learned yesterday on a different dataset. If anything was unclear yesterday, now is the time to catch up on that.
  - get a vague insight into how different data requires different treatment.
- - transition from copy-pasting _"magic incantations"_ to _"using tools that i can adapt to my data"_.
- - gain increased familiarity with one of the basic dataformats and handling them, using simple command line tools.
+ - transition _"from copy-pasting magic incantations"_ to _"using tools that i can adapt to my data"_.
+ - gain increased familiarity with some of the basic dataformats and handling them, using simple command line tools.
  - learn how this practical connects to real research.
 
 
@@ -68,17 +68,25 @@ ssh -Y <nodename>
 <br>
 
 ## data day 1
-We have prepared a directory with **.fastq** files from **100** samples.
-each sample consists of two files, containing the forward and reverse reads.
-they follow the naming scheme   ```TYPE_ID_READTYPE.FILEENDING```.
-for example, sample **1337**, which has a **c**omplicated disease progression, will look like this:
+We have prepared a directory with **.fastq** files from **100** samples:  
+```/proj/g2020004/nobackup/ngsworkflow/day3and4/data ```
 
-```bash
-C_1337_R1.fastq
-C_1337_R2.fastq
+each sample consists of two files, containing the forward and reverse reads.
+they follow the naming scheme   ```SampleID.DIRECTION.FILEENDING```.
+for example, sample **01200211Eth2Res120** , will look like this:
+
 ```
+01200211Eth2Res120.forward.fq
+01200211Eth2Res120.reverse.fq
+```
+In the same folder, you will also find the reference file:
+
+```Mycobacterium_tuberculosis_h37rv.ASM19595v2.dna.chromosome.Chromosome.fa```
+which you will need for alignment.
+
+
 ### Task 2:
-Pick one simple (S) and one complicated (C) disease progression sample and [copy](https://linux.die.net/man/1/cp) them to your home directory.
+pick two samples (so, 4 files) and [copy](https://linux.die.net/man/1/cp) or [simlink](https://ss64.com/bash/ln.html) them to your home directory.
 
 **Questions:**
 
@@ -118,11 +126,13 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
 ### Task 4:
 
 copy the generated GVCF files into the folder folder below!  
+
+```/proj/g2020004/nobackup/ngsworkflow/day3and4/data```
+
 We will run joint variant-calling on it, to generate the VCF file that we will use tomorrow.
-```
-/path/to/project/subproject/gvcf
-```
-add an identifier to the filename, so you will be able to recognise it tomorrow (optional).
+Add an identifier to the filenames, so you will be able to recognise them tomorrow (optional).
+
+
 
 ### Wrap up day 1
 
@@ -130,6 +140,7 @@ add an identifier to the filename, so you will be able to recognise it tomorrow 
 - #### which of these are relevant to the exam?
 - #### How does this relate to the real world? (and our research?)
 
+---
 ## Day 2
 
 ### Objectives
@@ -144,23 +155,25 @@ Today we will work with the VCF file containing the samples that you processed y
 ### Task 1
 - copy the VCF-file from the folder below into your working directory.
 ```
-path/to/project/subproject/VCF.vcf
+/proj/g2020004/nobackup/ngsworkflow/day3and4/data/Mt_h37rv.vcf
 ```
-- in the same folder is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
+- in the folder ```/proj/g2020004/nobackup/ngsworkflow/``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
-- inspect the file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
+- inspect the VCF file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
   - If you're not sure what any of these do, you can read the [man page](https://en.wikipedia.org/wiki/Man_page) for these tools or google them.
   - You can also have a look at the [official specifications for vcf-fileformat 4.2](https://samtools.github.io/hts-specs/VCFv4.2.pdf).
 - *can you spot a general structure?*
 - *what do columns and rows represent?*
 - *can you tell how many samples there are?*
+
   - <details><summary>tips</summary>
 
       <p>
-        **dirty and fast** : grep the header-line containing the sample-names, count them.  <br>
-        **clean**: there's a BCFtools functionality that outputs a list of sample-names. e.g. ```bcftools query -l file.bcf | wc -l```
+        dirty and fast: grep the header-line containing the sample-names, count them.  <br>
+        clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.bcf | wc -l
 
       </p>
+
    </details>
 
 
