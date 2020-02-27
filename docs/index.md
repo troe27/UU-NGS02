@@ -179,16 +179,27 @@ Today we will work with the VCF file containing the samples that you processed y
 
 
 ### Task2
-Plot the variants as a heatmap and/or clustermap.
-we have made a small script that does this for you, called ```plot_variants.py```that you can find in the folder ```/path/to/script/``` and copy over to your directory. this file is a small python script that you can run just like any bash-script. it has a few options that you can see when looking for the help-message:
-you can look at the script in detail [here]()
+Plot the variants as a heatmap.
+we have made a small script that does this for you, called ```plot_heatmap.py```that you can find in the scripts folder. This file is a small python script that you can run just like any bash-script, except that you will use python3 to execute it. it has only one option, which you can see when looking for the help-message:
 ```bash
- [in]: python plot_variants.py --help
-[out]: #TODO
+ [in]: python3 plot_heatmap.py --help
+[out]: usage: plot_heatmap.py [-h] -i INPUT_VCF
+
+       plot a heatmap
+
+       optional arguments:
+       -h, --help                           show this help message and exit
+       -i INPUT_VCF, --input_vcf INPUT_VCF  path/to/input.vcf
+
 ```
+If you are curious, you can look at the script in detail [here](https://github.com/troe27/UU-NGS02/blob/master/premade_scripts/make_heatmap.py).
+( I tried my best to annotate it. Also, there are much easier ways of plotting, they're just not installed on the server by default.)
+
+
 **Questions:**
  - _What do the X and Y axis represent?_
- - _What do the colours mean?_
+ - _Why did we only put "beginning" and "end" as X-axis labels?_
+ - _What do the colours mean? can you guess from the context?_
  - _Can you identify duplicate samples?_
  - _How many samples do you need to identify a causative region?_
  - _Can you already spot something interesting?_
@@ -205,7 +216,7 @@ For the Third task, we are going to split the VCF into multiple groups correspon
 
 **tasks:**
 - Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples.sh```. Look at it using ```cat``` or  ```less``` to figure out what input it needs.  
-- split the vcf file into two files, using bcftools and the generated lists.
+- split the vcf file into two files, using [```bcftools view -S  ```](http://samtools.github.io/bcftools/bcftools.html#view) and the generated lists.
 
 ### Task4
 for the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants.
@@ -225,6 +236,6 @@ compute and plot the allele-frequency delta using the provided script ```delta_a
 
 
 ### Discussion and Wrap-up.
-
+- #### Q&A
 - #### What are the main take-away messages?
 - #### which of these are relevant to the exam?

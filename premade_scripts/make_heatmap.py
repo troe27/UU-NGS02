@@ -9,7 +9,8 @@ import argparse                          # library to make the command line inte
 
 
 ### function to create the CLI ##############################################################
-def cli_parser():
+def cli_parser():                                                        # "def" is the start of every function definition.
+                                                                         #  here we define the function cli_parser()
     '''Parse command line input.'''
     parser_main = argparse.ArgumentParser(prog='plot_heatmap.py',        # define name of the program
                                           description="plot a heatmap")  # define description
@@ -20,8 +21,10 @@ def cli_parser():
     return args                                                          # return resulting arguments
 
 ### function to parse the VCF into a genotype matrix ########################################
-def load_vcf(input_vcf, threads=1, aaf_thresh=0.0):
-    """ """
+def load_vcf(input_vcf, threads=1, aaf_thresh=0.0):          # the function "load_vcf" has arguments, namely the name of the input_vcf,
+                                                             # how many threads to use ( computing)
+                                                             #  and a threshold for alternative allele frequency the default threshold is 0.0
+    """ load a vcf """
     vcf = cyvcf2.VCF(input_vcf, gts012=True,threads=threads) # load the vcf
     gts = []                                                 #init empty list for genotype_entries
     aaf = []                                                 #init empty list for alternative allele frequencies
@@ -75,7 +78,7 @@ def heatmap(data, row_labels, col_labels, ax=None, **kwargs):
 
 ### plotting ############################################################################
 def make_plots(gt_array, rmean):
-    """ """
+    """ makes and displays the plots """
     figure = plt.figure(constrained_layout=True, figsize=(20,20)) # create the figure with a size of 20x20
     gs = figure.add_gridspec(2, 1, height_ratios=[10,1])          # make a grid of 2x1 subplots,
                                                                   # i.e. two plots on top of each other
@@ -89,12 +92,13 @@ def make_plots(gt_array, rmean):
             col_labels=gt_array[0],                               # add labels
             cmap="Greys",                                         # define the colormap, here we only want Black/White
             ax=figure_ax1)                                        # plot on ax1
-
+    figure_ax1.set_ylabel("Samples", size=20)
+    figure_ax1.set_title("Variants", size=30)
     figure_ax2.plot(rmean, color="Black")                         # plot the rolling mean on ax2
     figure_ax2.get_xaxis().set_ticks([])                          # hide x-tick-labels
     figure_ax2.set_xlim(0,2690)                                   # set limits for the x-axis
     figure_ax2.set_ylim(0,0.5)                                    # set limits for the y-axis
-
+    figure_ax2.set_ylabel("AAF", size=20)
     plt.show()                                                    # show the plot
 
 
@@ -109,4 +113,5 @@ def main():
 
 
 ### execute code ############################################################################
-main()
+if __name__ == "__main__":                         # not relevant for our purpose, but useful if you want to load the functions/script as a package into another script
+    main()                                         # execute the main function! yay!
