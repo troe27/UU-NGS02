@@ -159,6 +159,8 @@ Today we will work with the VCF file containing the samples that you processed y
 ```
 - in the folder ```/proj/g2020004/nobackup/ngsworkflow/``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
+- in the scripts folders is a bash script called ```load_modules.sh``` that contains all the modules you will need for today. you will need to run this at the beginning of each session to make sure you have access to the tools we will use.
+
 - inspect the VCF file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
   - If you're not sure what any of these do, you can read the [man page](https://en.wikipedia.org/wiki/Man_page) for these tools or google them.
   - You can also have a look at the [official specifications for vcf-fileformat 4.2](https://samtools.github.io/hts-specs/VCFv4.2.pdf).
@@ -219,7 +221,7 @@ For the Third task, we are going to split the VCF into multiple groups correspon
 - split the vcf file into two files, using [```bcftools view -S  ```](http://samtools.github.io/bcftools/bcftools.html#view) and the generated lists.
 
 ### Task4
-for the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants.
+For the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants.
 
 **Questions:**
 - _Do you know what is meant with allele-frequency?_
@@ -228,10 +230,8 @@ for the fourth task, we will then look at the difference in allele-frequency for
 - _What could it also mean?_
 
 **Tasks:**
-for both files, extract allele-frequencies using BCFtools.
-compute and plot the allele-frequency delta using the provided script ```delta_af.py```
-
-**Questions:**
+For both files, extract allele-frequencies using BCFtools.
+compute and plot the allele-frequency delta using the provided script ```make_delta_af.py```. you can look at the code [here](https://github.com/troe27/UU-NGS02/blob/master/premade_scripts/make_delta_af.py)
 
 
 
