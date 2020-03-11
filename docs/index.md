@@ -245,7 +245,7 @@ If you have some time, we can now try to understand the underlying functinnal ch
 **Tasks:**
 Check your hypothesis, on one of the resistance.
 
-details><summary>tips</summary>
+<details><summary>tips</summary>
 
 
 You can use IGV, then load the reference genome and the annotations and go to the mutated position, or you can annotate the vcf using SnpEff, then look at the position with grep (section 6 and 7 of your previous practical).
