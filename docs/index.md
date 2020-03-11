@@ -234,6 +234,24 @@ For both files, extract allele-frequencies using BCFtools.
 compute and plot the allele-frequency delta using the provided script ```make_delta_af.py```. you can look at the code [here](https://github.com/troe27/UU-NGS02/blob/master/premade_scripts/make_delta_af.py)
 
 
+### Task5
+
+If you have some time, we can now try to understand the underlying functinnal change occuring in the strains resistant to the antibiotics.
+
+**Questions:**
+- How would you look into the functional aspects, using the tools you learned about in this module or before?
+- What would be your hypothesis for the new resistance to arise?
+
+**Tasks:**
+Check your hypothesis, on one of the resistance.
+
+details><summary>tips</summary>
+
+
+You can use IGV, then load the reference genome and the annotations and go to the mutated position, or you can annotate the vcf using SnpEff, then look at the position with grep (section 6 and 7 of your previous practical).
+
+</details>
+
 
 ### Discussion and Wrap-up.
 - #### Q&A
