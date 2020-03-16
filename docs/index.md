@@ -4,9 +4,9 @@
 ### Table of contents
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
-	- [Table of contents](#table-of-contents)
-	- [Overview](#overview)
-	- [Background](#background)
+- [Table of contents](#table-of-contents)
+- [Overview](#overview)
+- [Background](#background)
 - [Day1](#day1)
 	- [Objectives](#objectives)
 	- [Task 1:](#task-1)
