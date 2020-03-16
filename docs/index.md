@@ -4,25 +4,28 @@
 ### Table of contents
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
-- [Table of contents](#table-of-contents)
-- [Overview](#overview)
-- [Background](#background)
+	- [Table of contents](#table-of-contents)
+	- [Overview](#overview)
+	- [Background](#background)
 - [Day1](#day1)
-  - [Objectives](#objectives)
-  - [Data](#data-day-1)
-  - [Task 1:](#task-1)
-  - [Task 2:](#task-2)
-  - [Task 3:](#task-3)
-  - [Task 4:](#task-4)
-  - [Wrap up day 1](#wrap-up-day-1)
+	- [Objectives](#objectives)
+	- [Task 1:](#task-1)
+- [find your node:](#find-your-node)
+- [connect to your node:](#connect-to-your-node)
+- [data day 1](#data-day-1)
+	- [Task 2:](#task-2)
+	- [Task 3:](#task-3)
+	- [Task 4:](#task-4)
+	- [Wrap up day 1](#wrap-up-day-1)
 - [Day 2](#day-2)
-  - [Objectives](#objectives)
-  - [Data](#data-day-2)
-  - [Task 1](#task-1)
-  - [Task2](#task2)
-  - [Task3](#task3)
-  - [Task4](#task4)
-  - [Discussion and Wrap-up.](#discussion-and-wrap-up)
+	- [Objectives](#objectives)
+	- [Data-day-2](#data-day-2)
+	- [Task 1](#task-1)
+	- [Task2](#task2)
+	- [Task3](#task3)
+	- [Task4](#task4)
+	- [Task5](#task5)
+	- [Discussion and Wrap-up.](#discussion-and-wrap-up)
 
 <!-- /TOC -->
 
@@ -236,19 +239,18 @@ compute and plot the allele-frequency delta using the provided script ```make_de
 
 ### Task5
 
-If you have some time, we can now try to understand the underlying functinnal change occuring in the strains resistant to the antibiotics.
-
 **Questions:**
-- How would you look into the functional aspects, using the tools you learned about in this module or before?
-- What would be your hypothesis for the new resistance to arise?
+- Having found a potential region of interest, how would you investigate it for functional connections to the phenotype at hand, using the tools you learned about in this module or before?
+- Speculate: What event did you think lead to the acquisition of resistance?
 
 **Tasks:**
-Check your hypothesis, on one of the resistance.
+Check your hypothesis!
 
 <details><summary>tips</summary>
 
 
-You can use IGV, then load the reference genome and the annotations and go to the mutated position, or you can annotate the vcf using SnpEff, then look at the position with grep (section 6 and 7 of your previous practical).
+You can use IGV to investigate the gene annotations for a given region. For this, you need to open IGV, then load the reference genome and the annotation file ( ```.gff```).  
+Alternatively,  you can annotate the vcf using SnpEff, then look at the position with grep (section 6 and 7 of your previous practical).
 
 </details>
 
