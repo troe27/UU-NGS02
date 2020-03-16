@@ -1,6 +1,4 @@
 
-# work in progress 2020-02-26
-
 ### Table of contents
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
@@ -10,9 +8,7 @@
 - [Day1](#day1)
 	- [Objectives](#objectives)
 	- [Task 1:](#task-1)
-- [find your node:](#find-your-node)
-- [connect to your node:](#connect-to-your-node)
-- [data day 1](#data-day-1)
+  - [data day 1](#data-day-1)
 	- [Task 2:](#task-2)
 	- [Task 3:](#task-3)
 	- [Task 4:](#task-4)
