@@ -68,7 +68,7 @@ ssh -Y <nodename>
 
 ## data day 1
 We have prepared a directory with **.fastq** files from **100** samples:  
-```/proj/g2020004/nobackup/ngsworkflow/day3and4/data ```
+```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data ```
 
 each sample consists of two files, containing the forward and reverse reads.
 they follow the naming scheme   ```SampleID.DIRECTION.FILEENDING```.
@@ -126,7 +126,7 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
 copy the generated GVCF files into the folder folder below!  
 
-```/proj/g2020004/nobackup/ngsworkflow/day3and4/data```
+```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data```
 
 We will run joint variant-calling on it, to generate the VCF file that we will use tomorrow.
 Add an identifier to the filenames, so you will be able to recognise them tomorrow (optional).
@@ -154,9 +154,9 @@ Today we will work with the VCF file containing the samples that you processed y
 ### Task 1
 - copy the VCF-file from the folder below into your working directory.
 ```
-/proj/g2020004/nobackup/ngsworkflow/day3and4/data/Mt_h37rv.vcf
+/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data/Mt_h37rv.vcf
 ```
-- in the folder ```/proj/g2020004/nobackup/ngsworkflow/``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
+- in the folder ```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
 - in the scripts folders is a bash script called ```load_modules.sh``` that contains all the modules you will need for today. you will need to run this at the beginning of each session to make sure you have access to the tools we will use.
 
@@ -170,7 +170,7 @@ Today we will work with the VCF file containing the samples that you processed y
   - <details><summary>tips</summary>
 
       <p>
-        dirty and fast: grep the header-line containing the sample-names, count them.  <br>
+        dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
         clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.bcf | wc -l
 
       </p>
