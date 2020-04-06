@@ -174,8 +174,8 @@ Today we will work with the VCF file containing the samples that you processed y
 
       <p>
         dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
-        clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.bcf | wc -l
-(What is grep doing that make it a really bad idea to use on real data?) 
+        clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.bcf | wc -l <br>
+		(What is grep doing that make it a really bad idea to use on real data?) 
       </p>
 
    </details>
