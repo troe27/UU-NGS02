@@ -1,5 +1,7 @@
 
 ### Table of contents
+
+<details><summary>See</summary>
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
 - [Table of contents](#table-of-contents)
@@ -24,6 +26,7 @@
 	- [Discussion and Wrap-up.](#discussion-and-wrap-up)
 
 <!-- /TOC -->
+</details>
 
 ### Overview
 ![visual overview](figures/UU-NGS02.svg)
