@@ -47,17 +47,13 @@ We will work with several "patient derived samples": strains that have been eith
 
 ### Task 1:  
 SSH into Rackham and request a interactive session, like you did yesterday.
-The reservation code for today is ```RESERVATION_CODE ```
+
 <details><summary>tips</summary>
 <p>
 
 ```bash
-salloc -A <PROJECT> -t 04:00:00 -p core -n 5 --no-shell --reservation=<RESERVATION_CODE> \
--M snowy &
-## find your node:
-squeue -u <username> -M snowy
-## connect to your node:
-ssh -Y <nodename>
+ssh -Y <user_name>@rackham.uppmax.uu.se
+interactive -A g2020004 -t 4:00:00
 ```
 </p>
 </details>
