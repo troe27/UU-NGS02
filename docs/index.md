@@ -157,7 +157,22 @@ Today we will work with the VCF file containing the samples that you processed y
 ```
 - in the folder ```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
-- in the scripts folders is a bash script called ```load_modules.sh``` that contains all the modules you will need for today. you will need to run this at the beginning of each session to make sure you have access to the tools we will use.
+- Today you will need to load a large amount of libraries - most of them dependencies of other libraries.
+the easiest way to deal with this is to just copy&paste the codeblock below into the commandline:
+
+```bash
+module load python3
+module load bioinfo-tools
+module load bcftools
+module load biopython
+module load cyvcf2
+module load CDO/1.9.5
+module load GOTM/5.3-221-gac7ec88d
+module load Rosetta/3.7
+module load deal.II/9.1.1-gcc
+module load deal.II/9.1.1-intel
+module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
+```
 
 - inspect the VCF file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
   - If you're not sure what any of these do, you can read the [man page](https://en.wikipedia.org/wiki/Man_page) for these tools or google them.
@@ -171,7 +186,7 @@ Today we will work with the VCF file containing the samples that you processed y
       <p>
         dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
         clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.bcf | wc -l <br>
-		(What is grep doing that make it a really bad idea to use on real data?) 
+		(What is grep doing that make it a really bad idea to use on real data?)
       </p>
 
    </details>
