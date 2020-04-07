@@ -18,7 +18,7 @@ Some basic concepts & examples that may help you with this.
 
 
 ```bash
-for i in iterable; #e.g. file in folder: for i in ./*.file ending
+for i in iterable; #e.g. file in folder: for i in ./*.fileending
 do                     # beginning of loop
   echo "do something"; # the action that should be performed for each i in iterable
                        # in the for-loop, i can be accessed using the ${i} variable.
