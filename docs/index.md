@@ -1,30 +1,32 @@
 
-# work in progress 2020-02-26
-
 ### Table of contents
+
+<details><summary>See</summary>
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
 - [Table of contents](#table-of-contents)
 - [Overview](#overview)
 - [Background](#background)
 - [Day1](#day1)
-  - [Objectives](#objectives)
-  - [Data](#data-day-1)
-  - [Task 1:](#task-1)
-  - [Task 2:](#task-2)
-  - [Task 3:](#task-3)
-  - [Task 4:](#task-4)
-  - [Wrap up day 1](#wrap-up-day-1)
+	- [Objectives](#objectives)
+	- [Task 1:](#task-1)
+  - [data day 1](#data-day-1)
+	- [Task 2:](#task-2)
+	- [Task 3:](#task-3)
+	- [Task 4:](#task-4)
+	- [Wrap up day 1](#wrap-up-day-1)
 - [Day 2](#day-2)
-  - [Objectives](#objectives)
-  - [Data](#data-day-2)
-  - [Task 1](#task-1)
-  - [Task2](#task2)
-  - [Task3](#task3)
-  - [Task4](#task4)
-  - [Discussion and Wrap-up.](#discussion-and-wrap-up)
+	- [Objectives](#objectives)
+	- [Data-day-2](#data-day-2)
+	- [Task 1](#task-1)
+	- [Task2](#task2)
+	- [Task3](#task3)
+	- [Task4](#task4)
+	- [Task5](#task5)
+	- [Discussion and Wrap-up.](#discussion-and-wrap-up)
 
 <!-- /TOC -->
+</details>
 
 ### Overview
 ![visual overview](figures/UU-NGS02.svg)
@@ -48,17 +50,13 @@ We will work with several "patient derived samples": strains that have been eith
 
 ### Task 1:  
 SSH into Rackham and request a interactive session, like you did yesterday.
-The reservation code for today is ```RESERVATION_CODE ```
+
 <details><summary>tips</summary>
 <p>
 
 ```bash
-salloc -A <PROJECT> -t 04:00:00 -p core -n 5 --no-shell --reservation=<RESERVATION_CODE> \
--M snowy &
-## find your node:
-squeue -u <username> -M snowy
-## connect to your node:
-ssh -Y <nodename>
+ssh -Y <user_name>@rackham.uppmax.uu.se
+interactive -A g2020004 -t 4:00:00
 ```
 </p>
 </details>
@@ -69,7 +67,7 @@ ssh -Y <nodename>
 
 ## data day 1
 We have prepared a directory with **.fastq** files from **100** samples:  
-```/proj/g2020004/nobackup/ngsworkflow/day3and4/data ```
+```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data ```
 
 each sample consists of two files, containing the forward and reverse reads.
 they follow the naming scheme   ```SampleID.DIRECTION.FILEENDING```.
@@ -127,7 +125,7 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
 copy the generated GVCF files into the folder folder below!  
 
-```/proj/g2020004/nobackup/ngsworkflow/day3and4/data```
+```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data```
 
 We will run joint variant-calling on it, to generate the VCF file that we will use tomorrow.
 Add an identifier to the filenames, so you will be able to recognise them tomorrow (optional).
@@ -155,9 +153,9 @@ Today we will work with the VCF file containing the samples that you processed y
 ### Task 1
 - copy the VCF-file from the folder below into your working directory.
 ```
-/proj/g2020004/nobackup/ngsworkflow/day3and4/data/Mt_h37rv.vcf
+/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data/Mt_h37rv.vcf
 ```
-- in the folder ```/proj/g2020004/nobackup/ngsworkflow/``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
+- in the folder ```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
 - in the scripts folders is a bash script called ```load_modules.sh``` that contains all the modules you will need for today. you will need to run this at the beginning of each session to make sure you have access to the tools we will use.
 
@@ -171,9 +169,9 @@ Today we will work with the VCF file containing the samples that you processed y
   - <details><summary>tips</summary>
 
       <p>
-        dirty and fast: grep the header-line containing the sample-names, count them.  <br>
-        clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.bcf | wc -l
-
+        dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
+        clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.bcf | wc -l <br>
+		(What is grep doing that make it a really bad idea to use on real data?) 
       </p>
 
    </details>
@@ -236,19 +234,18 @@ compute and plot the allele-frequency delta using the provided script ```make_de
 
 ### Task5
 
-If you have some time, we can now try to understand the underlying functinnal change occuring in the strains resistant to the antibiotics.
-
 **Questions:**
-- How would you look into the functional aspects, using the tools you learned about in this module or before?
-- What would be your hypothesis for the new resistance to arise?
+- Having found a potential region of interest, how would you investigate it for functional connections to the phenotype at hand, using the tools you learned about in this module or before?
+- Speculate: What event did you think lead to the acquisition of resistance?
 
 **Tasks:**
-Check your hypothesis, on one of the resistance.
+Check your hypothesis!
 
 <details><summary>tips</summary>
 
 
-You can use IGV, then load the reference genome and the annotations and go to the mutated position, or you can annotate the vcf using SnpEff, then look at the position with grep (section 6 and 7 of your previous practical).
+You can use IGV to investigate the gene annotations for a given region. For this, you need to open IGV, then load the reference genome and the annotation file ( ```.gff```).  
+Alternatively,  you can annotate the vcf using SnpEff, then look at the position with grep (section 6 and 7 of your previous practical).
 
 </details>
 
