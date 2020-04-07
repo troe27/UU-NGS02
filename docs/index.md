@@ -44,7 +44,7 @@ We will work with several "patient derived samples": strains that have been eith
  - practise/re-use what you've learned yesterday on a different dataset. If anything was unclear yesterday, now is the time to catch up on that.
  - get a vague insight into how different data requires different treatment.
  - transition _"from copy-pasting magic incantations"_ to _"using tools that i can adapt to my data"_.
- - gain increased familiarity with some of the basic dataformats and handling them, using simple command line tools.
+ - gain increased familiarity with some of the basic data formats and handling them, using simple command line tools.
  - learn how this practical connects to real research.
 
 
@@ -70,8 +70,8 @@ We have prepared a directory with **.fastq** files from **100** samples:
 ```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data ```
 
 each sample consists of two files, containing the forward and reverse reads.
-they follow the naming scheme   ```SampleID.DIRECTION.FILEENDING```.
-for example, sample **01200211Eth2Res120** , will look like this:
+They follow the naming scheme   ```SampleID.DIRECTION.FILEENDING```.
+For example, sample **01200211Eth2Res120** , will look like this:
 
 ```
 01200211Eth2Res120.forward.fq
@@ -123,7 +123,7 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
 ### Task 4:
 
-copy the generated GVCF files into the folder folder below!  
+Copy the generated GVCF files into the folder folder below!  
 
 ```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data```
 
@@ -135,27 +135,27 @@ Add an identifier to the filenames, so you will be able to recognise them tomorr
 ### Wrap up day 1
 
 - #### What are the main take-away messages?
-- #### which of these are relevant to the exam?
+- #### Which of these are relevant to the exam?
 - #### How does this relate to the real world? (and our research?)
 
 ---
 ## Day 2
 
 ### Objectives
-- familiarise yourself with the VCF file-format
+- Familiarise yourself with the VCF file-format
 - Discuss the variant data by plotting and clustering the genotype matrix.
-- familiarise yourself with BCFtools/htslib for filtering, modifying and analysing Variant data.
-- investigate between-group allele-frequency-differences to identify candidate regions.  
+- Familiarise yourself with BCFtools/htslib for filtering, modifying and analysing Variant data.
+- Investigate between-group allele-frequency-differences to identify candidate regions.  
 
 ### Data-day-2
 Today we will work with the VCF file containing the samples that you processed yesterday.
 
 ### Task 1
-- copy the VCF-file from the folder below into your working directory.
+- Copy the VCF-file from the folder below into your working directory.
 ```
 /proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data/Mt_h37rv.vcf
 ```
-- in the folder ```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
+- In the folder ```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
 - Today you will need to load a large amount of libraries - most of them dependencies of other libraries.
 the easiest way to deal with this is to just copy&paste the codeblock below into the commandline:
@@ -174,19 +174,19 @@ module load deal.II/9.1.1-intel
 module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
 ```
 
-- inspect the VCF file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
+- Inspect the VCF file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
   - If you're not sure what any of these do, you can read the [man page](https://en.wikipedia.org/wiki/Man_page) for these tools or google them.
   - You can also have a look at the [official specifications for vcf-fileformat 4.2](https://samtools.github.io/hts-specs/VCFv4.2.pdf).
-- *can you spot a general structure?*
-- *what do columns and rows represent?*
-- *can you tell how many samples there are?*
+- *Can you spot a general structure?*
+- *What do columns and rows represent?*
+- *Can you tell how many samples there are?*
 
   - <details><summary>tips</summary>
 
       <p>
-        dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
-        clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.bcf | wc -l <br>
-		(What is grep doing that make it a really bad idea to use on real data?)
+        Dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
+        clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.vcf | wc -l <br>
+		What is grep doing that make it a really bad idea to use on real data?
       </p>
 
    </details>
@@ -195,9 +195,9 @@ module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
 
 ### Task2
 Plot the variants as a heatmap.
-we have made a small script that does this for you, called ```plot_heatmap.py```that you can find in the scripts folder. This file is a small python script that you can run just like any bash-script, except that you will use python3 to execute it. it has only one option, which you can see when looking for the help-message:
+We have made a small script that does this for you, called ```make_heatmap.py```that you can find in the scripts folder. This file is a small python script that you can run just like any bash-script, except that you will use python3 to execute it. It has only one option, which you can see when looking for the help-message:
 ```bash
- [in]: python3 plot_heatmap.py --help
+ [in]: python3 make_heatmap.py --help
 [out]: usage: plot_heatmap.py [-h] -i INPUT_VCF
 
        plot a heatmap
@@ -221,7 +221,7 @@ If you are curious, you can look at the script in detail [here](https://github.c
 
 
 ### Task3
-For the Third task, we are going to split the VCF into multiple groups corresponding with their phenotype, using BCFtools.
+For the third task, we are going to split the VCF into multiple groups corresponding with their phenotype, using BCFtools.
 
 
 **Questions:**
@@ -231,7 +231,7 @@ For the Third task, we are going to split the VCF into multiple groups correspon
 
 **tasks:**
 - Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples.sh```. Look at it using ```cat``` or  ```less``` to figure out what input it needs.  
-- split the vcf file into two files, using [```bcftools view -S  ```](http://samtools.github.io/bcftools/bcftools.html#view) and the generated lists.
+- Split the vcf file into two files, using [```bcftools view -S  ```](http://samtools.github.io/bcftools/bcftools.html#view) and the generated lists.
 
 ### Task4
 For the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants.
