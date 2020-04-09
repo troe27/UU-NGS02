@@ -198,7 +198,7 @@ Plot the variants as a heatmap.
 We have made a small script that does this for you, called ```make_heatmap.py```that you can find in the scripts folder. This file is a small python script that you can run just like any bash-script, except that you will use python3 to execute it. It has only one option, which you can see when looking for the help-message:
 ```bash
  [in]: python3 make_heatmap.py --help
-[out]: usage: plot_heatmap.py [-h] -i INPUT_VCF
+[out]: usage: make_heatmap.py [-h] -i INPUT_VCF
 
        plot a heatmap
 
