@@ -123,10 +123,10 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
 Copy the generated GVCF files into the folder folder below!  
 
-```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/data```
+```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/data/GVCF```
 
-We will run joint variant-calling on it, to generate the VCF file that we will use tomorrow.
-Add an identifier to the filenames, so you will be able to recognise them tomorrow (optional).
+We will run joint variant-calling on it, to generate the VCF file that we will use on Monday.
+Add an identifier to the filenames, so you will be able to recognise them on Monday (optional).
 
 
 
