@@ -65,7 +65,7 @@ interactive -A g2021009 -M snowy -t 4:00:00
 
 ## data day 1
 We have prepared a directory with **.fastq** files from **100** samples:  
-```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data ```
+```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/data ```
 
 each sample consists of two files, containing the forward and reverse reads.
 They follow the naming scheme   ```SampleID.DIRECTION.FILEENDING```.
@@ -123,7 +123,7 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
 Copy the generated GVCF files into the folder folder below!  
 
-```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data```
+```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/data```
 
 We will run joint variant-calling on it, to generate the VCF file that we will use tomorrow.
 Add an identifier to the filenames, so you will be able to recognise them tomorrow (optional).
@@ -151,9 +151,9 @@ Today we will work with the VCF file containing the samples that you processed y
 ### Task 1
 - Copy the VCF-file from the folder below into your working directory.
 ```
-/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data/Mt_h37rv.vcf
+/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/data/Mt_h37rv.vcf
 ```
-- In the folder ```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
+- In the folder ```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
 - Today you will need to load a large amount of libraries - most of them dependencies of other libraries.
 the easiest way to deal with this is to just copy&paste the codeblock below into the commandline:
