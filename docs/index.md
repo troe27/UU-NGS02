@@ -45,8 +45,6 @@ We will work with several "patient derived samples": strains that have been eith
  - get a vague insight into how different data requires different treatment.
  - transition _"from copy-pasting magic incantations"_ to _"using tools that i can adapt to my data"_.
  - gain increased familiarity with some of the basic data formats and handling them, using simple command line tools.
- - learn how this practical connects to real research.
-
 
 ### Task 1:  
 SSH into Rackham and request a interactive session, like you did yesterday.
@@ -56,7 +54,7 @@ SSH into Rackham and request a interactive session, like you did yesterday.
 
 ```bash
 ssh -Y <user_name>@rackham.uppmax.uu.se
-interactive -A g2020004 -t 4:00:00
+interactive -A g2021009 -M snowy -t 4:00:00
 ```
 </p>
 </details>
