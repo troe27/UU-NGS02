@@ -159,11 +159,11 @@ Today we will work with the VCF file containing the samples that you processed y
 the easiest way to deal with this is to just copy&paste the codeblock below into the commandline:
 
 ```bash
-module load python3
+module load python3/3.7.2
 module load bioinfo-tools
 module load bcftools
-module load biopython
-module load cyvcf2
+module load biopython/1.76-py3
+module load cyvcf2/0.11.5-intel-2019a
 module load CDO/1.9.5
 module load GOTM/5.3-221-gac7ec88d
 module load Rosetta/3.7
