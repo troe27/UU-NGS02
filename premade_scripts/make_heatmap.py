@@ -3,6 +3,7 @@ import matplotlib                        # plotting library
 import matplotlib.pyplot as plt          # plotting library
 plt.switch_backend('TkAgg')              # switch plotting backend to enable X11 forwarding
 import matplotlib.gridspec as gridspec   # more plotting utilities
+from matplotlib.colors import LinearSegmentedColormap # yet another plotting utility
 import cyvcf2                            # python/cython wrapper around htslib, for reading/writing VCF files
 import numpy as np                       # math
 import argparse                          # library to make the command line interface pretty
@@ -86,11 +87,11 @@ def make_plots(gt_array, rmean):
     figure_ax1 = figure.add_subplot(gs[0])                        # ax1 is the top plot
     figure_ax2 = figure.add_subplot(gs[1])                        # ax2 is the smaller bottom plot
 
-
+    cmap = LinearSegmentedColormap.from_list('BW', ['white', 'black'], N=2) # make a simple white/black colormap
     heatmap(gt_array[2].transpose(),                              # plot the heatmap on the big-plot
             row_labels=gt_array[1],                               # add labels
             col_labels=gt_array[0],                               # add labels
-            cmap="Greys",                                         # define the colormap, here we only want Black/White
+            cmap=cmap,                                         # define the colormap, here we only want Black/White
             ax=figure_ax1)                                        # plot on ax1
     figure_ax1.set_ylabel("Samples", size=20)
     figure_ax1.set_title("Variants", size=30)
