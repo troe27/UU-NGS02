@@ -163,12 +163,12 @@ module load python3/3.7.2
 module load bioinfo-tools
 module load bcftools
 module load biopython/1.76-py3
-module load cyvcf2/0.11.5-intel-2019a
 module load CDO/1.9.5
 module load GOTM/5.3-221-gac7ec88d
 module load Rosetta/3.7
 module load deal.II/9.1.1-gcc
 module load deal.II/9.1.1-intel
+module load cyvcf2/0.11.5-intel-2019a
 module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
 ```
 
