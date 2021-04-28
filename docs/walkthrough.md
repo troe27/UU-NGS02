@@ -138,7 +138,9 @@ For the third task, we are going to split the VCF into multiple groups correspon
 > if we were to pick Rif, the command would be as such:  
 > ``` bash get_samples.sh /path/to/file.vcf Rif ``  
 > you can then use the resulting lists to split the vcf-file:  
+
 > ``` bcftools  view -S rif.wild.sampleList.txt /path/to/file.vcf > rif.wild.vcf ```  
+
 > ``` bcftools  view -S rif.resistant.sampleList.txt /path/to/file.vcf > rif.res.vcf ```  
 
 ### Task4
