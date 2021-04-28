@@ -175,7 +175,7 @@ compute and plot the allele-frequency delta using the provided script ```make_de
 - Having found a potential region of interest, how would you investigate it for functional connections to the phenotype at hand, using the tools you learned about in this module or before?
 - Speculate: What event did you think lead to the acquisition of resistance?  
 	> here, the likeliest scenario is a Point mutation in a gene where the product is either targeted by the antibiotic or involved in the defense against it.  
-	> e.g.  RifRes  761400  [link](https://www.sciencedirect.com/science/article/pii/S0732889300002005?via%3Dihub#FIG1)  
+	> e.g.  RifRes  761400  [paper](https://www.sciencedirect.com/science/article/pii/S0732889300002005?via%3Dihub#FIG1)  
 
 
 **Tasks:**
