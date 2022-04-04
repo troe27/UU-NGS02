@@ -1,4 +1,4 @@
 theme: jekyll-theme-slate
-kramdown:
-  input: Kramdown
-#markdown: CommonMarkGhPages
+markdown: CommonMark
+
+#GhPages
