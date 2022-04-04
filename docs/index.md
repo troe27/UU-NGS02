@@ -1,7 +1,9 @@
 
 ### Table of contents
 
-<details><summary>See</summary>
+<details><summary>See</summary>  
+
+
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
 - [Table of contents](#table-of-contents)
@@ -28,6 +30,7 @@
 <!-- /TOC -->
 </details>
 
+
 ### Overview
 ![visual overview](figures/UU-NGS02.svg)
 
@@ -50,11 +53,12 @@ We will work with several "patient derived samples": strains that have been eith
 SSH into Rackham and request a interactive session, like you did yesterday.
 
 <details><summary>tips</summary>
+
 <p>
 
 ```bash
 ssh -Y <user_name>@rackham.uppmax.uu.se
-interactive -A uppmax2022-2-6 -M snowy -t 4:00:00 --reservation=uppmax2022-2-6_1_4 
+interactive -A uppmax2022-2-6 -M snowy -t 4:00:00 --reservation=uppmax2022-2-6_1_4
 ```
 </p>
 </details>
