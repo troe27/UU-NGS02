@@ -115,6 +115,7 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
  Generate GVCF files from many samples using a [bash-script with for-loops, variables and string manipulation](./bash_scripting_day1.md)
 
 **NB:**
+ - if you want to find your sample again, remember to name it specifically in the readgroup ID
  - you will have to omit the BSQR step.
  - you need to run HaplotypeCaller with the ``-ploidy 1`` option.
 
@@ -183,7 +184,8 @@ module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
 - *What do columns and rows represent?*
 - *Can you tell how many samples there are?*
 
-  - <details><summary>tips</summary>
+
+<details><summary>tips</summary>
 
       <p>
         Dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
