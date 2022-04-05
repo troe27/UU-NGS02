@@ -69,7 +69,7 @@ interactive -A uppmax2022-2-6 -M snowy -t 4:00:00 --reservation=uppmax2022-2-6_1
 
 ## data day 1
 We have prepared a directory with **.fastq** files from **100** samples:  
-```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/data ```
+```/proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data ```
 
 each sample consists of two files, containing the forward and reverse reads.
 They follow the naming scheme   ```SampleID.DIRECTION.FILEENDING```.
