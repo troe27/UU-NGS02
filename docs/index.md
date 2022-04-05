@@ -116,7 +116,7 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
 
 **NB:**
  - if you want to find your sample again, remember to name it specifically in the readgroup ID
- - you will have to omit the BSQR step.
+ - you will have to omit the BSQR step or modify it, since you do not have a validated dataset of known sites, like you would have for a model organism.
  - you need to run HaplotypeCaller with the ``-ploidy 1`` option.
 
   - **optional**: have a look at the [HaplotypeCaller API](https://gatk.broadinstitute.org/hc/en-us/articles/360036712151-HaplotypeCaller) ([API](https://en.wikipedia.org/wiki/Application_programming_interface) = **A**pplication **P**rogramming **I**nterface).
