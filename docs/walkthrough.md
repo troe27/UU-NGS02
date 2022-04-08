@@ -166,7 +166,7 @@ For the fourth task, we will then look at the difference in allele-frequency for
 For both files, extract allele-frequencies using BCFtools.
 compute and plot the allele-frequency delta using the provided script ```make_delta_af.py```. you can look at the code [here](https://github.com/troe27/UU-NGS02/blob/master/premade_scripts/make_delta_af.py)  
 
-![heatmap](figures/make_heatmap.png)  
+![heatmap](figures/delta_af.png)  
 
 
 ### Task5
