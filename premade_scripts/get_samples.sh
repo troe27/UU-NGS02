@@ -12,3 +12,7 @@ RES=$2
 bcftools query -l $VCF_FILE | grep $RES > ${RES}.resistant.sampleList.txt
 # The only difference with the previous one is -v is grep that do a reverse grep, taking the lines that do not have the motif $RES
 bcftools query -l $VCF_FILE | grep -v $RES > ${RES}.wild.sampleList.txt
+
+# now, add the population description after the sample-name
+sed -e 's/$/;resistant/' -i.bak ${RES}.resistant.sampleList.txt
+sed -e 's/$/;wild/' -i.bak ${RES}.wild.sampleList.txt

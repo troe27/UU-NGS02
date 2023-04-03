@@ -197,15 +197,21 @@ module load bcftools
 
 
 ### Task2
-Have a look at the VCF as a heatmap.
+Plot the variants as a heatmap.
+We have made a small script that does this for you, called ```make_heatmap.py```that you can find in the scripts folder. This file is a small python script that you can run just like any bash-script, except that you will use python3 to execute it. It has only one option, which you can see when looking for the help-message:
+```bash
+ [in]: python3 make_heatmap.py --help
+[out]: usage: make_heatmap.py [-h] -i INPUT_VCF
 
-Since it is bit tricky to plot and display figures on Rackham when you are just starting out, we have created the figure and added it below.
+       plot a heatmap
 
+       optional arguments:
+       -h, --help                           show this help message and exit
+       -i INPUT_VCF, --input_vcf INPUT_VCF  path/to/input.vcf
 
-![heatmap](figures/heatmap_full.png)
-
-
-If you are curious, you can look at the code that created it in detail [here](UU_NGS_heatmap.html). (It is annotated, but in Python)
+```
+If you are curious, you can look at the script in detail [here](https://github.com/troe27/UU-NGS02/blob/master/premade_scripts/make_heatmap.py).
+( I tried my best to annotate it. Also, there are much easier ways of plotting, they're just not installed on the server by default.)
 
 
 **Questions:**
@@ -218,7 +224,7 @@ If you are curious, you can look at the code that created it in detail [here](UU
 
 
 ### Task3
-For the third task, we are going to extract the sample names corresponding with their phenotype, using a small bashscript and BCFtools. this will later help us compare the two groups.
+For the third task, we are going to split the VCF into multiple groups corresponding with their phenotype, using BCFtools.
 
 
 **Questions:**
@@ -231,7 +237,7 @@ For the third task, we are going to extract the sample names corresponding with 
 - Split the vcf file into two files, using [```bcftools view -S  ```](http://samtools.github.io/bcftools/bcftools.html#view) and the generated lists.
 
 ### Task4
-For the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants. The metric we will be using for this is the Fixation index, or $F_{ST}$ Usually this would be done in Python, R or commandline tools such as [VCFtools](https://vcftools.github.io/man_latest.html) or [plink](https://www.cog-genomics.org/plink/1.9/basic_stats)
+For the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants.
 
 **Questions:**
 - _Do you know what is meant with allele-frequency?_
@@ -240,6 +246,9 @@ For the fourth task, we will then look at the difference in allele-frequency for
 - _What could it also mean?_
 
 **Tasks:**
+For both files, extract allele-frequencies using BCFtools.
+compute and plot the allele-frequency delta using the provided script ```make_delta_af.py```. you can look at the code [here](https://github.com/troe27/UU-NGS02/blob/master/premade_scripts/make_delta_af.py)
+
 
 ### Task5
 
