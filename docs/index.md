@@ -184,7 +184,8 @@ module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
 - *Can you tell how many samples there are?*
 
 
-<details><summary>tips</summary>
+<details>
+			<summary>tips</summary>
 
       <pre>
         Dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
