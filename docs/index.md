@@ -36,7 +36,7 @@
 
 ### Background
 Today and tomorrow we will work with **simulated** sequencing data derived from [_Mycobacterium tuberculosis_](https://en.wikipedia.org/wiki/Mycobacterium_tuberculosis).
- _Mycobacterium tuberculosis_ is a pathogenic bacteria, and the causative agent of [tuberculosis](https://en.wikipedia.org/wiki/Tuberculosis), a bacterial disease that kills about [1.2 million people annually](https://www.who.int/tb/publications/global_report/en/), <del>making it the leading cause of death among infectious diseases.  </del> making it one of the leading causes of death among infectious diseases.
+ _Mycobacterium tuberculosis_ is a pathogenic bacteria, and the causative agent of [tuberculosis](https://en.wikipedia.org/wiki/Tuberculosis), a bacterial disease that kills about [1.2 million people annually](https://www.who.int/tb/publications/global_report/en/), making it one of the leading cause of death among infectious diseases.
  Since the treatment of tuberculosis requires sustained use of antibiotics, the rise of  multiple drug-resistant tuberculosis (MDR-TB) and extensively drug-resistant tuberculosis (XDR-TB) provides a serious concern for world health.
 
 We will work with several "patient derived samples": strains that have been either sampled from patients where the disease responded well to antibiotic treatment, or from patients with a more problematic disease progression, where the infection did not respond to first-line antibiotics.
@@ -58,7 +58,7 @@ SSH into Rackham and request a interactive session, like you did yesterday.
 
 ```bash
 ssh -Y <user_name>@rackham.uppmax.uu.se
-interactive -A uppmax2022-2-6 -M snowy -t 4:00:00 --reservation=uppmax2022-2-6_5_4
+interactive -A UPPMAX 2023-2-24 -M snowy -t 4:00:00 --reservation=uppmax2023-2-24_7
 ```
 </p>
 </details>
