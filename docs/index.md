@@ -115,7 +115,6 @@ Generate GVCF files from your samples, using the Software and steps from Day 1&2
  Generate GVCF files from many samples using a [bash-script with for-loops, variables and string manipulation](./bash_scripting_day1.md)
 
 **NB:**
- - if you want to find your sample again, remember to name it specifically in the readgroup ID
  - you will have to omit the BSQR step or modify it, since you do not have a validated dataset of known sites, like you would have for a model organism.
  - you need to run HaplotypeCaller with the ``-ploidy 1`` option.
 
@@ -130,8 +129,8 @@ Copy the generated GVCF files into the folder folder below!
 
 ```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/data/GVCF```
 
-We will run joint variant-calling on it, to generate the VCF file that we will use on Monday.
-Add an identifier to the filenames, so you will be able to recognise them on Monday (optional).
+We will run joint variant-calling on it, to generate the VCF file that we will use during the next session.
+
 
 
 
@@ -150,7 +149,7 @@ Add an identifier to the filenames, so you will be able to recognise them on Mon
 - Familiarise yourself with BCFtools/htslib for filtering, modifying and analysing Variant data.
 - Investigate between-group allele-frequency-differences to identify candidate regions.  
 
-### Data-day-2
+### Data day 2
 Today we will work with the VCF file containing the samples that you processed yesterday.
 
 ### Task 1
@@ -187,11 +186,11 @@ module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
 
 <details><summary>tips</summary>
 
-      <p>
+      <pre>
         Dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
         clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.vcf | wc -l <br>
 		What is grep doing that make it a really bad idea to use on real data?
-      </p>
+      </pre>
 
    </details>
 
