@@ -136,12 +136,9 @@ its embedded below, but you can also find it at ```/proj/g2021009/private/comput
 > get_samples.sh has two positional inputs: the file and a search term for the resistance:  
 > here, the three resistances are **Rif, Eth and Eth2**  
 > if we were to pick Rif, the command would be as such:  
+
 > ``` bash get_samples.sh /path/to/file.vcf Rif ``  
-> you can then use the resulting lists to split the vcf-file:  
 
-> ``` bcftools  view -S rif.wild.sampleList.txt /path/to/file.vcf > rif.wild.vcf ```  
-
-> ``` bcftools  view -S rif.resistant.sampleList.txt /path/to/file.vcf > rif.res.vcf ```  
 
 
 ### Task4
