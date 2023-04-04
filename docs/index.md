@@ -245,7 +245,7 @@ its embedded below, but you can also find it at ```/proj/g2021009/private/comput
 
 
 ### Task4
-For the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants. The metric we will be using for this is the [Fixation index](https://en.wikipedia.org/wiki/Fixation_index). Usually this would be done in Python, R or command line tools such as [VCFtools](https://vcftools.github.io/man_latest.html) or [plink](https://www.cog-genomics.org/plink/1.9/basic_stats). For convenience's sake, we are going to use [SNiPlay](https://sniplay.southgreen.fr/cgi-bin/analysis_v3.cgi), a webtool with a graphical user interface.
+For the fourth task, we will then look at the divergence in allele-frequency for each variant between groups to identify interesting variants. The metric we will be using for this is the [Fixation index](https://en.wikipedia.org/wiki/Fixation_index). Usually this would be done in Python, R or command line tools such as [VCFtools](https://vcftools.github.io/man_latest.html) or [plink](https://www.cog-genomics.org/plink/1.9/basic_stats). For convenience's sake, we are going to use [SNiPlay](https://sniplay.southgreen.fr/cgi-bin/analysis_v3.cgi), a webtool with a graphical user interface that also allows us to plot the results.
 
 for this you will need the VCF, the reference and the two lists from Task3.
 

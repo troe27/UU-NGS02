@@ -1,3 +1,3 @@
-RifRes  761400  ttps://www.sciencedirect.com/science/article/pii/S0732889300002005?via%3Dihub#FIG1
+RifRes  761400  https://www.sciencedirect.com/science/article/pii/S0732889300002005?via%3Dihub#FIG1
 EthRes  4246553 https://www.ncbi.nlm.nih.gov/pubmed/17294000/
 Eth2Res 4326065
