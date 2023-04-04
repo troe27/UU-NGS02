@@ -157,23 +157,16 @@ Today we will work with the VCF file containing the samples that you processed y
 ```
 /proj/g2020004/private/computer_practicals/NGS_workflow_day3_4/data/Mt_h37rv.vcf
 ```
-- In the folder ```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4``` is a subfolder called ```scripts``` containing some premade scripts for you to use. copy the whole folder into your project directory. you can do this the same way as for the vcf-file, except you will need to add the ```-r```(recursive) flag to your ```cp```-command, in order to also copy the folders contents.
 
-- Today you will need to load a large amount of libraries - most of them dependencies of other libraries.
+
+- Today you will need to load two  libraries one being bcftools and the other the underlying dependency.
 the easiest way to deal with this is to just copy&paste the codeblock below into the commandline:
 
 ```bash
-#module load python3/3.7.2
+
 module load bioinfo-tools
 module load bcftools
-#module load biopython/1.76-py3
-#module load CDO/1.9.5
-#module load GOTM/5.3-221-gac7ec88d
-#module load Rosetta/3.7
-#module load deal.II/9.1.1-gcc
-#module load deal.II/9.1.1-intel
-#module load cyvcf2/0.11.5-intel-2019a
-#module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
+
 ```
 
 - Inspect the VCF file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
@@ -227,7 +220,9 @@ For the third task, we are going to extract the sample names corresponding with 
 **tasks:**
 - Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples.sh```. Look at it using ```cat``` or  ```less``` to figure out what input it needs.
 
- ```bash
+its embedded below, but you can also find it at ```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/scripts/get_samples.bash```
+
+ ```bash  
  #! /usr/bin/env bash
 
 
@@ -247,18 +242,18 @@ For the third task, we are going to extract the sample names corresponding with 
  sed -e 's/$/;resistant/' -i.bak ${RES}.resistant.sampleList.txt
  sed -e 's/$/;wild/' -i.bak ${RES}.wild.sampleList.txt
 
- ```
+```
 
 
 ### Task4
 For the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants. The metric we will be using for this is the [Fixation index](https://en.wikipedia.org/wiki/Fixation_index). Usually this would be done in Python, R or command line tools such as [VCFtools](https://vcftools.github.io/man_latest.html) or [plink](https://www.cog-genomics.org/plink/1.9/basic_stats). For convenience's sake, we are going to use [SNiPlay](https://sniplay.southgreen.fr/cgi-bin/analysis_v3.cgi), a webtool with a graphical user interface.
 
-for this you will need the vcf, the reference and the two lists from Task3.
+for this you will need the VCF, the reference and the two lists from Task3.
 
 **Questions:**
 - _Do you know what is meant with allele-frequency?_
-- _Do you have an idea why we look at allele-frequency difference and not presence/absence of variants between groups ?_
-- _What does a high or low allele-frequency difference between two groups mean in this case?_
+- _Do you have an idea why we look at allele-frequency divergence and not presence/absence of variants between groups ?_
+- _What can a high or low allele-frequency difference between two groups mean in this case?_
 - _What could it also mean?_
 
 **Tasks:**
