@@ -46,7 +46,7 @@ We will work with several "patient derived samples": strains that have been eith
 ### Objectives
  - practise/re-use what you've learned yesterday on a different dataset. If anything was unclear yesterday, now is the time to catch up on that.
  - get a vague insight into how different data requires different treatment.
- - transition _"from copy-pasting magic incantations"_ to _"using tools that i can adapt to my data"_.
+ - transition _"from copy-pasting magic incantations"_ to _"using tools that i can adapt to my data"_. [ ](modular.md)
  - gain increased familiarity with some of the basic data formats and handling them, using simple command line tools.
 
 ### Task 1:  
