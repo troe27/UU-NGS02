@@ -159,8 +159,7 @@ Today we will work with the VCF file containing the samples that you processed y
 ```
 
 
-- Today you will need to load two  libraries one being bcftools and the other the underlying dependency.
-the easiest way to deal with this is to just copy&paste the codeblock below into the commandline:
+- Today you will need to load just two libraries: bcftools and the bioinfo-tools module.
 
 ```bash
 
