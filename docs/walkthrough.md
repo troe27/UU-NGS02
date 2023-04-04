@@ -56,8 +56,8 @@ module load matplotlib/3.0.3-foss-2019a-Python-3.7.2
   - <details><summary>tips</summary>
 
       <p>
-        Dirty (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
-        clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.vcf | wc -l <br>
+        Dirty: (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
+        Clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.vcf | wc -l <br>
 		What is grep doing that make it a really bad idea to use on real data?  
 		> grep searches the entire file for the search pattern, since it doesnt know what it is looking for. on real (large) data, this can take many minutes, whereas a data-aware tool like BCFtools takes less than a second, since it knows where to look.
       </p>

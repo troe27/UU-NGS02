@@ -19,7 +19,7 @@
 	- [Wrap up day 1](#wrap-up-day-1)
 - [Day 2](#day-2)
 	- [Objectives](#objectives)
-	- [Data-day-2](#data-day-2)
+	- [Data day 2](#data-day-2)
 	- [Task 1](#task-1)
 	- [Task2](#task2)
 	- [Task3](#task3)
@@ -32,7 +32,7 @@
 
 
 ### Overview
-![visual overview](figures/UU-NGS02.svg)
+![visual overview](figures/UU-NGS02_v2.svg)
 
 ### Background
 Today and tomorrow we will work with **simulated** sequencing data derived from [_Mycobacterium tuberculosis_](https://en.wikipedia.org/wiki/Mycobacterium_tuberculosis).
@@ -180,8 +180,8 @@ module load bcftools
 <details>
 			<summary>tips</summary>
 			<p>
-        **Dirty:** (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
-        **Clean**: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.vcf | wc -l <br>
+        Dirty: (and fast to write, does not need any tool installed): grep the header-line containing the sample-names, count them.  <br>
+        Clean: there's a BCFtools functionality that outputs a list of sample-names. e.g. bcftools query -l file.vcf | wc -l <br>
 		What is grep doing that make it a really bad idea to use on real data?
 		</p>
 
@@ -271,7 +271,7 @@ for this you will need the VCF, the reference and the two lists from Task3.
 
 - Once you have reached the second page,  shift all individuals and the chromosome to the right, using the ```>>``` buttons.
 
-- then, expand the "assign individuals to populations" section, copy and paste the content of your two lists in there. press submit
+- then, expand the ```assign individuals to populations``` section, copy and paste the content of your two lists in there. press ```submit```.
 
 
 <details><summary>step B</summary>
@@ -280,7 +280,7 @@ for this you will need the VCF, the reference and the two lists from Task3.
 
 </details>
 
-then, click the field named diversity analysis, and in the subsequent page, click submit.
+then, click the field named ```diversity analysis```, and in the subsequent page, click ```submit```.
 
 <details><summary>step C</summary>
 
