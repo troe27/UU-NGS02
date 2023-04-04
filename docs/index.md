@@ -197,15 +197,13 @@ module load bcftools
 
 
 ### Task2
-Have a look at the VCF as a heatmap.
-
-Since it is bit tricky to plot and display figures on Rackham when you are just starting out, we have created the figure and added it below.
-
+Have a look at the VCF as a graphical representation/heatmap.
+Since it is bit tricky to plot and display figures on Rackham when you are just starting out, we have created the figure and added it below. If you are curious, you can look at the code that created it in detail [here](UU_NGS_heatmap.html). (It is annotated, but in Python).
 
 ![heatmap](figures/heatmap_full.png)
 
 
-If you are curious, you can look at the code that created it in detail [here](UU_NGS_heatmap.html). (It is annotated, but in Python)
+
 
 
 **Questions:**
@@ -227,7 +225,29 @@ For the third task, we are going to extract the sample names corresponding with 
 
 
 **tasks:**
-- Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples.sh```. Look at it using ```cat``` or  ```less``` to figure out what input it needs.  
+- Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples.sh```. Look at it using ```cat``` or  ```less``` to figure out what input it needs.
+
+ ```bash
+ #! /usr/bin/env bash
+
+
+ # The first argument of this command is the name of the final VCF containing all the individuals
+ VCF_FILE=$1
+
+ # The second argument of this command, $2 is the motif in the sample name that tell if it is resistant or not for the treatement you want to look at
+ RES=$2
+
+ # This command read the samples names in $VCF_FILE pass them (using |) to grep that print only the sample that contains the motif $RES
+ # The names returned are then directed (with >) to be written in the file named  ${RES}.resistant.sampleList.txt (with ${RES} replaced in the real name by the second argument)
+ bcftools query -l $VCF_FILE | grep $RES > ${RES}.resistant.sampleList.txt
+ # The only difference with the previous one is -v is grep that do a reverse grep, taking the lines that do not have the motif $RES
+ bcftools query -l $VCF_FILE | grep -v $RES > ${RES}.wild.sampleList.txt
+
+ # now, add the population description after the sample-name
+ sed -e 's/$/;resistant/' -i.bak ${RES}.resistant.sampleList.txt
+ sed -e 's/$/;wild/' -i.bak ${RES}.wild.sampleList.txt
+
+ ```
 
 
 ### Task4
