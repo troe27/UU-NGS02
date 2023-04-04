@@ -228,10 +228,12 @@ For the third task, we are going to extract the sample names corresponding with 
 
 **tasks:**
 - Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples.sh```. Look at it using ```cat``` or  ```less``` to figure out what input it needs.  
-- Split the vcf file into two files, using [```bcftools view -S  ```](http://samtools.github.io/bcftools/bcftools.html#view) and the generated lists.
+
 
 ### Task4
-For the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants. The metric we will be using for this is the Fixation index, or $F_{ST}$ Usually this would be done in Python, R or commandline tools such as [VCFtools](https://vcftools.github.io/man_latest.html) or [plink](https://www.cog-genomics.org/plink/1.9/basic_stats)
+For the fourth task, we will then look at the difference in allele-frequency for each variant between groups to identify interesting variants. The metric we will be using for this is the [Fixation index](https://en.wikipedia.org/wiki/Fixation_index). Usually this would be done in Python, R or command line tools such as [VCFtools](https://vcftools.github.io/man_latest.html) or [plink](https://www.cog-genomics.org/plink/1.9/basic_stats). For convenience's sake, we are going to use [SNiPlay](https://sniplay.southgreen.fr/cgi-bin/analysis_v3.cgi), a webtool with a graphical user interface.
+
+for this you will need the vcf, the reference and the two lists from Task3.
 
 **Questions:**
 - _Do you know what is meant with allele-frequency?_
@@ -240,6 +242,44 @@ For the fourth task, we will then look at the difference in allele-frequency for
 - _What could it also mean?_
 
 **Tasks:**
+- go to the SNiPlay website [here](https://sniplay.southgreen.fr/cgi-bin/analysis_v3.cgi).
+- Upload the VCF file and the Reference fasta. to do this, you can download them either from the server with e.g [scp](https://linux.die.net/man/1/scp), or easier, from [here](https://drive.google.com/drive/folders/1lelvj0N75I1s853mvTz51GZDNpTQVscm?usp=sharing).
+- use the green button to upload both the ```.fa ``` reference file and the gzipped vcf (```.vcf.gz```). press the blue button to upload the files.
+- go to the bottom of the page and press "submit".
+
+<details><summary>step A</summary>
+
+![](figures/stepa.png)
+
+</details>
+
+
+- Once you have reached the second page,  shift all individuals and the chromosome to the right, using the ```>>``` buttons.
+
+- then, expand the "assign individuals to populations" section, copy and paste the content of your two lists in there. press submit
+
+
+<details><summary>step B</summary>
+
+![](figures/stepb.png)
+
+</details>
+
+then, click the field named diversity analysis, and in the subsequent page, click submit.
+
+<details><summary>step C</summary>
+
+![](figures/stepc.png)
+
+</details>  
+
+- Change the metric to 'Fst by marker', and have a look at both the figure and the table below. can you find an outlier? what does that outlier indicate?
+
+<details><summary>step D</summary>
+
+![](figures/stepd.png)
+
+</details>
 
 ### Task5
 
