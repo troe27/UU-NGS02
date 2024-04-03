@@ -58,7 +58,7 @@ SSH into Rackham and request a interactive session, like you did yesterday.
 
 ```bash
 ssh -Y <user_name>@rackham.uppmax.uu.se
-interactive -A uppmax2023-2-24 -M snowy -t 4:00:00 --reservation=uppmax2023-2-24_7
+interactive -A uppmax2024-2-10 -M snowy -t 4:00:00
 ```
 </p>
 </details>
@@ -148,11 +148,6 @@ We will run joint variant-calling on it, to generate the VCF file that we will u
 - Discuss the variant data by plotting and clustering the genotype matrix.
 - Familiarise yourself with BCFtools/htslib for filtering, modifying and analysing Variant data.
 - Investigate between-group allele-frequency-differences to identify candidate regions.  
-
-the reservation code for today is:
-```
-uppmax2023-2-24_8
-```
 
 
 ### Data day 2
