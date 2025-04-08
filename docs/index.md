@@ -81,7 +81,7 @@ For example, sample **01200211Eth2Res120** , will look like this:
 ```
 In the same folder, you will also find the reference file:
 
-```Mycobacterium_tuberculosis_h37rv.ASM19595v2.dna.chromosome.Chromosome.fa```
+```Mycobacterium_tuberculosis_h37rv.ASM19595V2.dna.chromosome.Chromosome.fa```
 which you will need for alignment.
 
 
