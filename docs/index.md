@@ -218,9 +218,9 @@ For the third task, we are going to extract the sample names corresponding with 
 
 
 **tasks:**
-- Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples.sh```. Look at it here, or using ```cat``` or  ```less``` to figure out what input it needs.
+- Extract "wildtype" and "resistant" samples-lists for a category/treatment of your choice from the table using the supplied bash script ```get_samples2.sh```. Look at it here, or using ```cat``` or  ```less``` to figure out what input it needs.
 
-its embedded below, but you can also find it at ```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/scripts/get_samples.bash```
+its embedded below, but you can also find it at ```/proj/g2021009/private/computer_practicals/NGS_workflow_day3_4/scripts/get_samples2.bash```
 
  ```bash  
  #! /usr/bin/env bash
