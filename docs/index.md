@@ -309,8 +309,9 @@ Check your hypothesis!
 <details><summary>tips</summary>
 
 
-You can use IGV to investigate the gene annotations for a given region. For this, you need to open IGV, then load the reference genome and the annotation file ( ```.gff```).  
+You can use IGV to investigate the gene annotations for a given region. For this, you need to open IGV, then load the reference genome and the annotation file ( ```.gff```). You can also use specialised online-databases to investigate the SNP or region, such as the [genome browser on mycobacterium.biocyc.org](https://mycobacterium.biocyc.org/)
 Alternatively,  you can annotate the vcf using SnpEff, then look at the position with grep (section 6 and 7 of your previous practical).
+
 
 </details>
 
