@@ -50,7 +50,7 @@ We will work with several "patient derived samples": strains that have been eith
  - gain increased familiarity with some of the basic data formats and handling them, using simple command line tools.
 
 ### Task 1:  
-SSH into Rackham and request a interactive session, like you did yesterday.
+SSH into Pelle and request a interactive session, like you did yesterday.
 
 <details><summary>tips</summary>
 
@@ -189,7 +189,7 @@ module avail bcftools
 
 ### Task2
 Have a look at the VCF as a graphical representation/heatmap.
-Since it is bit tricky to plot and display figures on Rackham when you are just starting out, we have created the figure and added it below. If you are curious, you can look at the code that created it in detail [here](UU_NGS_heatmap.html). (It is annotated, but in Python).
+Since it is bit tricky to plot and display figures on Pelle when you are just starting out, we have created the figure and added it below. If you are curious, you can look at the code that created it in detail [here](UU_NGS_heatmap.html). (It is annotated, but in Python).
 
 ![heatmap](figures/heatmap_full.png)
 
