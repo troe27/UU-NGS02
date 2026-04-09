@@ -167,7 +167,7 @@ module avail bcftools
 
 ```
 
-- Inspect the VCF file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` for this.
+- Inspect the VCF file manually. you can use ```cat```, ```less```, ```head``` and ```grep``` and ```bcftools view``` for this.
   - If you're not sure what any of these do, you can read the [man page](https://en.wikipedia.org/wiki/Man_page) for these tools or google them.
   - You can also have a look at the [official specifications for vcf-fileformat 4.2](https://samtools.github.io/hts-specs/VCFv4.2.pdf).
 - *Can you spot a general structure?*
