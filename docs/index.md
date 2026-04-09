@@ -160,12 +160,10 @@ Today we will work with the VCF file containing the samples that you processed y
 ```
 
 
-- Today you will need to load just two libraries: bcftools and the bioinfo-tools module.
-
+- Today you will need to load just one library: bcftools. you can find out how the module is called by using ```module avail <searchterm>```, e.g.
 ```bash
 
-module load bioinfo-tools
-module load bcftools
+module avail bcftools
 
 ```
 
