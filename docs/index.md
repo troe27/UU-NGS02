@@ -57,8 +57,8 @@ SSH into Rackham and request a interactive session, like you did yesterday.
 <p>
 
 ```bash
-ssh -Y <user_name>@rackham.uppmax.uu.se
-interactive -A uppmax2025-3-4 -t 4:00:00
+ssh -Y <user_name>@pelle.uppmax.uu.se
+interactive -A uppmax2026-1-93 -n 1 -t 4:00:00
 ```
 </p>
 </details>
